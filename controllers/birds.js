@@ -36,3 +36,15 @@ exports.birds_list = async function(req, res) {
         res.send(`{"error": ${err}}`); 
     }   
 }; 
+// VIEWS 
+// Handle a show all view 
+exports.birds_view_all_Page = async function(req, res) { 
+    try{ 
+        thebirds = await birds.find(); 
+        res.render('birds', { title: 'birds Search Results', results: thebirds }); 
+    } 
+    catch(err){ 
+        res.status(500); 
+        res.send(`{"error": ${err}}`); 
+    }   
+}; 
