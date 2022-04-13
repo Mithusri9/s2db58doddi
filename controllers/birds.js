@@ -24,3 +24,15 @@ exports.birds_delete = function(req, res) {
 exports.birds_update_put = function(req, res) { 
     res.send('NOT IMPLEMENTED: birds update PUT' + req.params.id); 
 }; 
+
+// List of all Costumes 
+exports.birds_list = async function(req, res) { 
+    try{ 
+        thebirds = await birds.find(); 
+        res.send(thebirds); 
+    } 
+    catch(err){ 
+        res.status(500); 
+        res.send(`{"error": ${err}}`); 
+    }   
+}; 
