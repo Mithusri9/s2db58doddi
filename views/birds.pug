@@ -7,23 +7,23 @@ block content
             -
                 var results = [
                     {
-                        "name":"GoldenEagle",
+                        "bird_name":"GoldenEagle",
                         "type":"Wild",
                         "national_bird":"Albania"
                     },
                     {
-                        "name":"Red-crested turaco",
+                        "bird_name":"Red-crested turaco",
                         "type":"Wild",
                         "national_bird":"angola"
                     },
                     {
-                        "name":"Zenaida dove",
+                        "bird_name":"Zenaida dove",
                         "type":"Domestic",
                         "national_bird":"Anguilla"
                     }
                 ]
             each i,index in results 
-                div(class="col-sm-2" onclick=`buy(${index})`)  #{i.name}  
+                div(class="col-sm-2" onclick=`buy(${index})`)  #{i.bird_name}  
                 div(class="col-sm-2" onclick=`buy(${index})`)  #{i.type}
                 div(class="col-sm-2" onclick=`buy(${index})`)  #{i.national_animal}
   script.

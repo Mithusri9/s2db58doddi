@@ -1,3 +1,4 @@
+// API for our resources 
 exports.api = function(req, res) { 
     res.write('['); 
     res.write('{"resource":"birds", '); 
