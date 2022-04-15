@@ -5,5 +5,5 @@ const costumeSchema = mongoose.Schema({
  national_bird: String
 }) 
  
-module.exports = mongoose.model("bird", 
+module.exports = mongoose.model("birds", 
 costumeSchema) 
