@@ -1,0 +1,48 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  - let bird_id = toShow._id 
+  - let name = toShow.bird_name 
+  - let typee = toShow.type 
+  - let nnationalbird = toShow.national_bird
+  - let actionid = "/resource/birds/"+bird_id
+  script let actionid = "#{actionid}"
+  div 
+    div.row 
+      div(class='birdsAttr mr-3') bird ID is: 
+      div #{bird_id} 
+    div.row 
+      div(class='birdsAttr mr-3') bird name is: 
+      div #{name} 
+    div.row 
+      div(class='birdsAttr mr-3') type is: 
+      div #{typee} 
+    div.row 
+      div(class='birdsAttr mr-3') national bird is: 
+      div #{nnationalbird}
+    button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete 
+    button(class="btn btn-secondary m-2" onclick="cancel()") Cancel 
+  script. 
+        function cancel() { 
+        // Go back to the home page for the costume collection 
+        window.location.href='/resource/birds/' 
+        }
+  script. 
+    function deleteOnid() { 
+      console.log("starting delete") 
+      // delete first 
+      fetch(actionid, { 
+        method: 'DELETE'      
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Delete succeded") 
+        window.location.href='/resource/birds/' 
+        // TODO handle body 
+      }).catch((error) => { 
+        // TODO handle error 
+        alert("Delete failed " + error ) 
+      }); 
+    }
