@@ -1,6 +1,10 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  flex:display;
+  flex-direction: column;
+  text-align: center;
+ 
 }
 
 a {
@@ -9,4 +13,18 @@ a {
 .birdsAttr { 
   background-color: aquamarine; 
   width: 120px; 
+  padding:10px;
+  flex:display;
+  flex-direction: column;
+  text-align: center;
+ 
 } 
+.container {
+  width:250px;
+  height: 200px;
+}
+.birdcss {
+  background-color: bisque;
+  width:120px;
+  border:2px solid black;
+}

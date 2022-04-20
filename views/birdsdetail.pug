@@ -2,23 +2,23 @@ extends layout
  
 block content 
   h1= title 
-    if(toShow == null)
+  if(toShow == null)
     h2 No instance to update
   else
   - let bird_id = toShow._id 
   - let name = toShow.bird_name 
   - let typee = toShow.type 
   - let nnationalbird = toShow.national_bird 
-  div 
+  div(class = 'container')
     div.row 
       div(class='birdsAttr mr-3') bird ID is: 
       div #{bird_id} 
     div.row 
       div(class='birdsAttr mr-3') bird name is: 
-      div #{name} 
+      div(class = 'birdcss') #{name} 
     div.row 
       div(class='birdsAttr mr-3') type is: 
-      div #{typee} 
+      div(class = 'birdcss') #{typee} 
     div.row 
       div(class='birdsAttr mr-3') national bird is: 
-      div #{nnationalbird}
+      div(class = 'birdcss') #{nnationalbird}
