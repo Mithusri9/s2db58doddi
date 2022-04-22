@@ -1,33 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  div(class="container-fluid")
-        div(class="row")
-            -
-                var results = [
-                    {
-                        "bird_name":"GoldenEagle",
-                        "type":"Wild",
-                        "national_bird":"Albania"
-                    },
-                    {
-                        "bird_name":"Red-crested turaco",
-                        "type":"Wild",
-                        "national_bird":"angola"
-                    },
-                    {
-                        "bird_name":"Zenaida dove",
-                        "type":"Domestic",
-                        "national_bird":"Anguilla"
-                    }
-                ]
-            each i,index in results 
-                div(class="col-sm-2" onclick=`buy(${index})`)  #{i.bird_name}  
-                div(class="col-sm-2" onclick=`buy(${index})`)  #{i.type}
-                div(class="col-sm-2" onclick=`buy(${index})`)  #{i.national_animal}
-  script.
-    function buy(p)
-    {
-        alert(`You have purchased an item ${p+1}`);
-    }
+    h1= title
+    - let items = results;
+    div(class="container-fluid") 
+     div(class="row") 
+      each item in items
+       - let destination = `dispatch(\"/birds/update?id=${item._id}\")`
+       div(class="row-sm-2", class="m-1") Birds #{item.bird_name}(#{item.type}) is #{item.national_bird}
+        button.btn( class="btn-primary ml-1", onclick= destination) Update
+    script. 
+     function dispatch(path)
+     { 
+      window.location.href=path 
+     } 
