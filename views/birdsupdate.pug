@@ -6,24 +6,24 @@ block content
     h2 No instance to update
   else
   - let birdid = toShow._id 
-  - let name = toShow.bird_name 
-  - let btype = toShow.type 
-  - let nationalbird = toShow.national_bird 
+  - let bird_name = toShow.bird_name 
+  - let type = toShow.type 
+  - let national_bird = toShow.national_bird 
    
   div.row(class='mb-2') 
     div.mr-1 ID is 
     div #{birdid} 
-  - let actionid = "/resource/birds/" + birdid 
+  - let actionid = "/resource/birds/" +birdid 
   form(id='birdForm', action= actionid, method="PUT") 
     div.form-group 
-        label.costumeAttr(for='type') Costume type 
-        input#type(type='text', name='type', value= name ) 
+        label.birdsAttr(for='bird_name') Bird name 
+        input#bird_name(type='text', name='bird_name', value= bird_name ) 
     div.form-group 
-        label.costumeAttr(for='birdtype') Costume size 
-        input#birdtype(type='text', name='birdtype', value= btype ) 
+        label.birdsAttr(for='type') Bird type 
+        input#type(type='text', name='type', value= type ) 
     div.form-group 
-        label.costumeAttr(for='nbird') Costume cost 
-        input#nbird(type='text', name='nbird', value= nationalbird ) 
+        label.birdsAttr(for='national_bird') National bird 
+        input#national_bird(type='text', name='national_bird', value= national_bird ) 
     input(type="submit") 
  
   script. 

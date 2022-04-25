@@ -1,19 +1,12 @@
-extends layout
-
-block content
-  h1= title
-  p This is Mithusri Doddi #{title}
-  button(type='button' class='btn btn-primary' onclick='moreClaps()') press me
-  br
-  br
-  div(id="target") clap for me 
-  script. 
-    let clap_count=0;
-    function moreClaps(){
-    clap_count = clap_count+2;
-    document.getElementById("target").innerHTML = ` Value of clap count is : ${clap_count}`;
-    console.log(clap_count)
-    }
-  br
-  br
-  a(href="http://localhost/5000/birds") Birds link 
+extends layout 
+ 
+block content 
+  if (!user) 
+    a(href="/login") Login 
+    br 
+    a(href="/register") Register 
+  if (user) 
+    p You are currently logged in as #{user.username} 
+    a(href="/birds") Take me to birds 
+    br 
+    a(href="/logout") Logout
